@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {AnnotationsComponent} from "./annotations/annotations.component";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'annotations';
+
+  @ViewChild('highlights') highlight: AnnotationsComponent;
+
+  addAnnotation() {
+    this.highlight.addAnnotation();
+  }
+
+  removeAnnotation() {
+    this.highlight.removeAnnotation();
+  }
 }
