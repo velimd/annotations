@@ -2,7 +2,7 @@ import {Component, QueryList, ViewChildren} from '@angular/core';
 import { HighlightsComponent } from "./highlights/highlights.component";
 
 @Component({
-  selector: 'app-highlights',
+  selector: 'app-annotations',
   templateUrl: './annotations.component.html',
   styleUrls: ['./annotations.component.scss']
 })

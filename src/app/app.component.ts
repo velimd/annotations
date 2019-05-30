@@ -9,7 +9,7 @@ import {AnnotationsComponent} from "./annotations/annotations.component";
 export class AppComponent {
   title = 'annotations';
 
-  @ViewChild('highlights') highlight: AnnotationsComponent;
+  @ViewChild('annotations') annotations: AnnotationsComponent;
 
   constructor() {
     document.addEventListener('keydown', (e) => {
@@ -20,10 +20,10 @@ export class AppComponent {
   }
 
   addAnnotation() {
-    this.highlight.addAnnotation();
+    this.annotations.addAnnotation();
   }
 
   removeAnnotation() {
-    this.highlight.removeAnnotation();
+    this.annotations.removeAnnotation();
   }
 }

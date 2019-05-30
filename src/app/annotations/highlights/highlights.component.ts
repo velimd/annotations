@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 
 @Component({
-  selector: 'app-annotations',
+  selector: 'app-highlights',
   templateUrl: './highlights.component.html',
   styleUrls: ['./highlights.component.scss']
 })
