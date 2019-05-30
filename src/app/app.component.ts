@@ -11,6 +11,14 @@ export class AppComponent {
 
   @ViewChild('highlights') highlight: AnnotationsComponent;
 
+  constructor() {
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Backspace') {
+        this.removeAnnotation();
+      }
+    })
+  }
+
   addAnnotation() {
     this.highlight.addAnnotation();
   }

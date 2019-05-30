@@ -1,4 +1,4 @@
-import {Component, ElementRef, ViewChild} from '@angular/core';
+import {Component, QueryList, ViewChildren} from '@angular/core';
 import { HighlightsComponent } from "./highlights/highlights.component";
 
 @Component({
@@ -8,7 +8,7 @@ import { HighlightsComponent } from "./highlights/highlights.component";
 })
 export class AnnotationsComponent {
 
-  @ViewChild('annotationContainer') annotationContainer: ElementRef;
+  @ViewChildren('annotation') annotationChildren: QueryList<HighlightsComponent>;
   annotations = [];
 
   addAnnotation() {
@@ -17,7 +17,12 @@ export class AnnotationsComponent {
   }
 
   removeAnnotation() {
-    this.annotations = this.annotations.filter(annotation => annotation.selected !== true);
-    console.log('removed highlight');
+    const annotationChildrenArr = this.annotationChildren.toArray();
+    for (let i = 0; i<annotationChildrenArr.length; i++) {
+      if (annotationChildrenArr[i].selected === true) {
+        this.annotations.splice(i, 1);
+        console.log('removed highlight');
+      }
+    }
   }
 }
